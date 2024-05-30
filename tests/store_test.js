@@ -2,11 +2,9 @@ const { pause } = require("codeceptjs");
 
 Feature('store');
 
-Scenario('test something', ({ I }) => {
+Scenario('test something', ({ I, homePage }) => {
     I.amOnPage('http://opencart.qatestlab.net/');
-    I.click({ xpath: '//*[@id="top-links"]/ul/li/span/span' });
-    I.click({ xpath: '//a[.="Register"]' });
-    pause();
+    homePage.openRegistrationPage();
     I.see('Register Account');
     I.fillField({css: '#input-firstname'}, 'Alex');
     //pause();

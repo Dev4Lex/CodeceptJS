@@ -1,6 +1,12 @@
 const { I } = inject();
 
 module.exports = {
+myAccountSpoiler: {xpath: '//*[@id="top-links"]/ul/li/span/span' },
+registerButton:  {xpath: '//a[.="Register"]' },
 
-  // insert your locators and methods here
+openRegistrationPage(){
+  I.click(this.myAccountSpoiler);
+  I.click(this.registerButton);
+}
+
 }

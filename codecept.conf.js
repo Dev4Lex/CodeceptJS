@@ -26,6 +26,8 @@ exports.config = {
   include: {
     I: './steps_file.js',
     homePage: "./pages/home.js",
+
+    registerPage: "./pages/register.js",
   },
   name: 'CodeceptJS-1'
 }
