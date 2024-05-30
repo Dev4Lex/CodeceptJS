@@ -14,7 +14,10 @@ exports.config = {
     Playwright: {
       browser: 'chromium',
       url: 'http://localhost',
-      show: true
+      show: true,
+      waitForNavigation: 'networkidle',
+      waitForTimeout: 5000,
+      windowSize: '1440x900'
     }
   },
   include: {
