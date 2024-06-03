@@ -1,7 +1,7 @@
 const { I } = inject();
 
 module.exports = {
-myAccountSpoiler: {xpath: '//*[@id="top-links"]/ul/li/span/span' },
+myAccountSpoiler: {xpath: '//span[text()= "My Account"]' },
 registerButton:  {xpath: '//a[.="Register"]' },
 
 openRegistrationPage(){

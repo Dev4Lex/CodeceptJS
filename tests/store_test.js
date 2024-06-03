@@ -1,5 +1,3 @@
-const { passwordConfirmField, continueButton } = require("../pages/register");
-
 let registrationUser = {
     firstName: 'Alex',
     lastName: '123',

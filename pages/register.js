@@ -10,6 +10,7 @@ module.exports = {
   passwordConfirmField: {css: '#input-confirm'},
   privacyPolicyRadioField: '//input[@name="agree"]',
   continueButton: '//input[@value="Continue"]',
+  successfullRegistrationText: 'Your Account Has Been Created!',
 
   verifyRegisterAccountText(){
     I.see(this.registerHeaderText);
@@ -26,6 +27,6 @@ module.exports = {
   },
   completeRegistration(){
     I.click(this.continueButton);
-    I.see('Your Account Has Been Created!');
+    I.see(this.successfullRegistrationText);
   }
 }
