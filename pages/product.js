@@ -7,5 +7,7 @@ module.exports = {
   async getProductPrice(){
     return await I.grabTextFrom(this.priceText);
   }
+
+  
   // insert your locators and methods here
 }

@@ -9,6 +9,7 @@ Scenario('buy products', async ({ I, productPage }) => {
     I.login(loginUser);
     I.amOnPage('http://opencart.qatestlab.net/index.php?route=product/product&path=31&product_id=40');
     let price = await productPage.getProductPrice();
+    I.selectColor();
     console.log(price);
     pause();
 }).tag('buy');

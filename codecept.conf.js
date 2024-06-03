@@ -24,7 +24,7 @@ exports.config = {
     },
     "ChaiWrapper": {
       "require": "codeceptjs-chai"
-  }
+    }
   },
   include: {
     I: './steps_file.js',
@@ -32,6 +32,8 @@ exports.config = {
     registerPage: "./pages/register.js",
 
     productPage: "./pages/product.js",
+
+    checkoutPage: "./pages/checkout.js",
   },
   name: 'CodeceptJS-1'
 }
