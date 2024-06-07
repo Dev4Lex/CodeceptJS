@@ -2,8 +2,8 @@ const signInButton = { xpath: '//a[text()="Sign In"]'};
 const emailField = {css: '#input-email'};
 const passwordField = {css: '#input-password'};
 const submitButton = {xpath : '//input[@type = "submit"]'};
-const colorSelector = {xpath: '//a[@class="sbSelector"]'};
-const yellowColor = {xpath: '//a[contains(text(),"Yellow")]'}
+const colorSelector = {xpath: '//label[text()="Color"]/following-sibling::div/a[2]'};
+const grayColor = {xpath: '//a[contains(text(),"Gray")]'}
 
 // in this file you can append custom step methods to 'I' object
 
@@ -27,7 +27,7 @@ module.exports = function() {
 
     selectColor(){
       this.click(colorSelector);
-      this.click(yellowColor);
+      this.click(grayColor);
      
     }
     // Define custom steps here, use 'this' to access default methods of I.

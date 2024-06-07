@@ -13,7 +13,7 @@ module.exports = {
     },
 
     getArrayFromString(string){
-        return this.readContectFromFile().split('\n');
+        return string.split('\n');
     },
 
     getArrayOfProductLinkObjects(array) {
@@ -22,5 +22,11 @@ module.exports = {
             arrayOfObjects.push({ link: element });
         }
         return arrayOfObjects;
+    },
+
+    getLinks(){
+        return this.getArrayOfProductLinkObjects(this.getArrayFromString(this.readContectFromFile()));
+
+
     }
 }

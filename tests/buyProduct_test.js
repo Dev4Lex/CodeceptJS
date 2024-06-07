@@ -8,8 +8,8 @@ let loginUser = {
     password: 'veryStr0ngP@ssword',
 };
 
-const FileReader = require('./../helpers/fileReader.js');
-let productLinks3 = FileReader.getArrayOfProductLinkObjects((FileReader.getArrayFromString()));
+const LinksGetter = require('../helpers/productLinksGetter.js');
+let productLinks3 = LinksGetter.getLinks();
 console.log(productLinks3);
 
 Feature('buy');
