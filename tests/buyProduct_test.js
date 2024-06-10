@@ -14,16 +14,14 @@ console.log(productLinks3);
 
 Feature('buy');
 
-Before(({ I }) => { // or Background
+Before(({ I }) => { 
     I.login(loginUser);
   });
 
-Data(productLinks3).Scenario('buy products', async ({ I, productPage, current}) => {
-  I.click({xpath: "//i[@class='linearicons-cart']"});
-  let result = await productPage.checkElementIsVisible({xpath: '//p[text()="Your shopping cart is empty!"]'});
-  console.log('result is ' + result);
-  let attributesArray = await I.grabAttributeFromAll({xpath: '//i[@class="linearicons-trash"]'});
-  console.log("array size: " + attributesArray.length);
+Data(productLinks3).Scenario('buy products', async ({ I, homePage, productPage, current}) => {
+  console.log(await homePage.checkCartIsEmpty());
+  let attributesArray = await I.grabAttributeFromAll(homePage.deleteItemfromCartIcon);
+  console.log("Array size: " + attributesArray.length);
   I.amOnPage(current.link);
   let price = await productPage.getProductPrice();
   I.selectColor();
