@@ -8,6 +8,7 @@ const grayColor = {xpath: '//a[contains(text(),"Gray")]'};
 // in this file you can append custom step methods to 'I' object
 
 const STORE_URL = 'http://opencart.qatestlab.net/';
+const CHECKOUT_URL = 'http://opencart.qatestlab.net/index.php?route=checkout/cart';
 
 module.exports = function() {
   return actor({

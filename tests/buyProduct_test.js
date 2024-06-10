@@ -27,6 +27,7 @@ Data(productLinks3).Scenario('buy products', async ({ I, homePage, productPage, 
   I.selectColor();
   console.log(price);
   I.assertEqual(price, '$60.00', "Prices are not in match");
+  console.log(await I.parsePrice(price));
 }).tag('buy');
 
 After(({ I }) => { 

@@ -20,11 +20,14 @@ exports.config = {
       show: true,
       waitForNavigation: 'networkidle',
       waitForTimeout: 5000,
-      windowSize: '1440x900'
+      windowSize: '1366×768'
     },
     ChaiWrapper: {
       require: "codeceptjs-chai"
-    }
+    },
+    Converter: {
+      require: './helpers/converter_helper.js',
+    },
   },
    plugins: {
      tryTo: {
