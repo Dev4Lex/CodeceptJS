@@ -27,13 +27,13 @@ exports.config = {
     },
     Converter: {
       require: './helpers/converter_helper.js',
-    },
+    }
   },
-   plugins: {
-     tryTo: {
-       enabled: true
-     }
-   },
+  //  plugins: {
+  //    tryTo: {
+  //      enabled: true
+  //    }
+  //  },
   include: {
     I: './steps_file.js',
     homePage: "./pages/home.js",
