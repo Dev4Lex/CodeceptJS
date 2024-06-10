@@ -3,7 +3,7 @@ const emailField = {css: '#input-email'};
 const passwordField = {css: '#input-password'};
 const submitButton = {xpath : '//input[@type = "submit"]'};
 const colorSelector = {xpath: '//label[text()="Color"]/following-sibling::div/a[2]'};
-const grayColor = {xpath: '//a[contains(text(),"Gray")]'}
+const grayColor = {xpath: '//a[contains(text(),"Gray")]'};
 
 // in this file you can append custom step methods to 'I' object
 

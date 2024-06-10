@@ -18,12 +18,17 @@ Before(({ I }) => { // or Background
     I.login(loginUser);
   });
 
-Data(productLinks3).Scenario('buy products', async ({ I, productPage, current}) => {
-    I.amOnPage(current.link);
-    let price = await productPage.getProductPrice();
-    I.selectColor();
-    console.log(price);
-    I.assertEqual(price, '$60.00', "Prices are not in match");
+Data(productLinks3).Scenario('buy products', async ({ I, productPage, current, checkElementIsVisibleHelper}) => {
+  I.click({xpath: "//i[@class='linearicons-cart']"});
+  let result = await checkElementIsVisibleHelper.checkElementIsVisible({xpath: '//p[text()="Your shopping cart is empty!"]'});
+  console.log('result is ' + result);
+  let attributesArray = await I.grabAttributeFromAll({xpath: '//i[@class="linearicons-trash"]'});
+  console.log("array size: " + attributesArray.length);
+  I.amOnPage(current.link);
+  let price = await productPage.getProductPrice();
+  I.selectColor();
+  console.log(price);
+  I.assertEqual(price, '$60.00', "Prices are not in match");
 }).tag('buy');
 
 After(({ I }) => { 

@@ -9,11 +9,11 @@ let registrationUser = {
 
 Feature('store');
 
-Scenario('test something', ({ I, homePage, registerPage }) => {
+Scenario('registration', ({ I, homePage, registerPage }) => {
     I.openStore();
     homePage.openRegistrationPage();
     registerPage.verifyRegisterAccountText();
     registerPage.fillRegistrationDetails(registrationUser);
     registerPage.completeRegistration();
     pause();
-});
+}).tag('register');

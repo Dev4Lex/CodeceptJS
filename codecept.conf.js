@@ -2,6 +2,7 @@ const {
   setHeadlessWhen,
   setCommonPlugins
 } = require('@codeceptjs/configure');
+const helper = require('./helpers/checkElementIsVisibleHelper');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
@@ -22,18 +23,22 @@ exports.config = {
       waitForTimeout: 5000,
       windowSize: '1440x900'
     },
-    "ChaiWrapper": {
-      "require": "codeceptjs-chai"
+    ChaiWrapper: {
+      require: "codeceptjs-chai"
     }
   },
+  /* plugins: {
+     tryTo: {
+       enabled: true
+     }
+   },*/
   include: {
     I: './steps_file.js',
     homePage: "./pages/home.js",
     registerPage: "./pages/register.js",
-
     productPage: "./pages/product.js",
-
     checkoutPage: "./pages/checkout.js",
+    checkElementIsVisibleHelper: './helpers/checkElementIsVisibleHelper.js'
   },
   name: 'CodeceptJS-1'
 }
