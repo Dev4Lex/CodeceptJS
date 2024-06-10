@@ -18,9 +18,9 @@ Before(({ I }) => { // or Background
     I.login(loginUser);
   });
 
-Data(productLinks3).Scenario('buy products', async ({ I, productPage, current, checkElementIsVisibleHelper}) => {
+Data(productLinks3).Scenario('buy products', async ({ I, productPage, current}) => {
   I.click({xpath: "//i[@class='linearicons-cart']"});
-  let result = await checkElementIsVisibleHelper.checkElementIsVisible({xpath: '//p[text()="Your shopping cart is empty!"]'});
+  let result = await productPage.checkElementIsVisible({xpath: '//p[text()="Your shopping cart is empty!"]'});
   console.log('result is ' + result);
   let attributesArray = await I.grabAttributeFromAll({xpath: '//i[@class="linearicons-trash"]'});
   console.log("array size: " + attributesArray.length);
