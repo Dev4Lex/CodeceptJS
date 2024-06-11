@@ -8,6 +8,7 @@ setHeadlessWhen(process.env.HEADLESS);
 
 // enable all common plugins https://github.com/codeceptjs/configure#setcommonplugins
 setCommonPlugins();
+require('dotenv').config();
 
 /** @type {CodeceptJS.MainConfig} */
 exports.config = {
@@ -27,7 +28,15 @@ exports.config = {
     },
     Converter: {
       require: './helpers/converter_helper.js',
-    }
+    },
+    REST:{
+      endpoint: 'https://currate.ru',
+      defaultHeaders: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+    },
+    JSONResponse: {},
   },
   //  plugins: {
   //    tryTo: {

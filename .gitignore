@@ -3,3 +3,4 @@ output
 package-lock.json
 .vscode
 output/test_something.failed.png
+.env

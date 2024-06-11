@@ -9,7 +9,7 @@ type Converter = import('./helpers/converter_helper.js');
 
 declare namespace CodeceptJS {
   interface SupportObject { I: I, current: any, homePage: homePage, registerPage: registerPage, productPage: productPage, checkoutPage: checkoutPage }
-  interface Methods extends Playwright, ChaiWrapper, Converter {}
+  interface Methods extends Playwright, ChaiWrapper, Converter, REST, JSONResponse {}
   interface I extends ReturnType<steps_file>, WithTranslation<Methods> {}
   namespace Translation {
     interface Actions {}

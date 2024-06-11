@@ -11,6 +11,8 @@ let loginUser = {
 const LinksGetter = require('../helpers/productLinksGetter.js');
 let productLinks3 = LinksGetter.getLinks();
 console.log(productLinks3);
+const apiKey = process.env.CURRATE_KEY;
+const url = `/api/?get=rates&pairs=USDRUB,EURRUB&key=${apiKey}`;
 
 Feature('buy');
 
@@ -28,6 +30,9 @@ Data(productLinks3).Scenario('buy products', async ({ I, homePage, productPage, 
   console.log(price);
   I.assertEqual(price, '$60.00', "Prices are not in match");
   console.log(await I.parsePrice(price));
+  let response = await I.sendGetRequest(url);
+  I.seeResponseCodeIs(200);
+  console.log(response.data.data.USDRUB);
 }).tag('buy');
 
 After(({ I }) => { 
