@@ -15,5 +15,4 @@ Scenario('registration', ({ I, homePage, registerPage }) => {
     registerPage.verifyRegisterAccountText();
     registerPage.fillRegistrationDetails(registrationUser);
     registerPage.completeRegistration();
-    pause();
 }).tag('register');
