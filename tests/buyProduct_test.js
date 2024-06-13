@@ -31,7 +31,7 @@ Data(productLinks3).Scenario('buy products', async ({ I, homePage, productPage, 
   I.assertEqual(price, '$60.00', "Prices are not in match");
   console.log(await I.parsePrice(price));
   let response = await I.sendGetRequest(url);
-  I.seeResponseCodeIs(400);
+  I.seeResponseCodeIs(200);
   console.log(response.data.data.USDRUB);
 }).tag('buy');
 
